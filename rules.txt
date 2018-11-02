@@ -1,0 +1,131 @@
+Pgm -> kwdprog Vargroup Fcndefs Main
+Main -> kwdmain BBlock
+BBlock -> brace1 Vargroup Stmts brace2
+Vargroup -> kwdvars PPvarlist
+Vargroup -> eps
+PPvarlist -> parens1 Varlist parens2
+Varlist -> Varitem semi Varlist
+Varlist -> eps
+Varitem -> Vardecl Z
+Z -> eps
+Z -> equal Varinit
+Varitem -> Classdecl Y
+Y -> eps
+Y -> Classmom Interfaces BBClassitems
+Vardecl -> Simplekind Varspec 
+Simplekind -> Basekind
+Simplekind -> Classid
+Basekind -> int
+Basekind -> float
+Basekind -> string
+Classid -> id
+Varspec -> Varid X
+X -> eps
+X -> KKint
+Varspec -> Deref_id
+Varid -> id
+Arrspec -> Varid KKint
+KKint -> bracket1 int bracket2
+Deref_id -> Deref id
+Deref -> aster
+Varinit -> Expr
+Varinit -> BBexprs
+BBexprs -> brace1 W brace2
+W -> eps
+W -> Exprlist
+Exprlist -> Expr Moreexprs
+Moreexprs -> comma Exprlist
+Moreexprs -> eps
+Classdecl -> kwdclass Classid
+Classdef -> Classheader BBClassitems
+BBClassitems -> brace1 Classitems brace2
+Classheader -> Classdecl Classmom Interfaces
+Classmom -> plus Classid	// leading terminal from 'colon' to 'plus'
+Classmom -> eps
+Classitems -> Classgroup Classitems
+Classitems -> eps
+Classgroup -> Class_ctrl
+Classgroup -> Varlist
+Classgroup -> Mddecls
+Classgroup -> eps
+Class_ctrl -> colon id
+Interfaces -> colon Classid Interfaces
+Interfaces -> eps
+Mddecls -> Mdheader Mddecls
+Mddecls -> eps
+Mdheader -> kwdfcn Md_id PParmlist Retkind
+Md_id -> Classid colon Fcnid
+Fcndefs -> Fcndef Fcndefs
+Fcndefs -> eps
+Fcndef -> Fcnheader BBlock
+Fcnheader -> kwdfcn Fcnid PParmlist Retkind
+Fcnid -> id
+Retkind -> Basekind
+PParmlist -> parens1 V parens2
+V -> eps
+V -> Varspecs
+Varspecs -> Varspec More_varspecs
+More_varspecs -> comma Varspecs
+More_varspecs -> eps
+PPonly -> parens1 parens2
+Stmts -> Stmt semi Stmts
+Stmts -> eps
+Stmt -> id U 
+Stmt -> aster id equal Expr
+U -> T equal Expr 
+U -> PPexprs
+T -> eps
+T -> KKexpr
+Stmt -> Stif
+Stmt -> Stwhile
+Stmt -> Stprint
+Stmt -> Strtn
+Stasgn -> Lval equal Expr
+Lval -> Varid S
+S -> eps
+S -> KKexpr
+Lval -> Deref_id
+Aref -> Varid KKexpr
+KKexpr -> bracket1 Expr bracket2
+Fcall -> Fcnid PPexprs
+PPexprs -> parens1 R parens2
+R -> eps
+R -> Exprlist
+Stif -> kwdif PPexpr BBlock Elsepart
+Elsepart -> kwdelseif PPexpr BBlock Elsepart
+Elsepart -> kwdelse BBlock
+Elsepart -> eps
+Stwhile -> kwdwhile PPexpr BBlock
+Stprint -> kprint PPexprs
+Strtn -> kwdreturn Q
+Q -> eps
+Q -> Expr
+PPexpr -> parens1 Expr parens2
+Expr -> Rterm A
+A -> Oprel Rterm A
+A -> eps
+Rterm -> Term B
+B -> Opadd Term B
+B -> eps
+Term -> Fact C
+C -> Opmul Fact C
+C -> eps
+Fact -> Basekind 
+Fact -> id P
+P -> S
+P -> PPexprs
+Fact -> PPexpr
+Oprel -> opeq
+Oprel -> opne
+Oprel -> Lthan
+Oprel -> ople
+Oprel -> opge
+Oprel -> Gthan
+Lthan -> angle1
+Gthan -> angle2
+Opadd -> plus
+Opadd -> minus
+Opmul -> aster
+Opmul -> slash
+Opmul -> caret
+P -> eps

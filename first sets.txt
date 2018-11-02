@@ -1,0 +1,154 @@
+kwdprog - kwdprog
+kwdmain - kwdmain
+kwdvars - kwdvars
+semi - semi
+equal - equal
+int - int
+float - float
+string - string
+id - id
+aster - aster
+comma - comma
+kwdclass - kwdclass
+colon - colon
+kwdfcn - kwdfcn
+kwdif - kwdif
+kwdelseif - kwdelseif
+kwdelse - kwdelse
+kwdwhile - kwdwhile
+kprint - kprint
+kwdreturn - kwdreturn
+ampersand - ampersand
+opeq - opeq
+opne - opne
+ople - ople
+opge - opge
+plus - plus
+minus - minus
+slash - slash
+caret - caret
+brace1 - brace1
+brace2 - brace2
+parens1 - parens1
+parens2 - parens2
+bracket1 - bracket1
+bracket2 - bracket2
+angle1 - angle1
+angle2 - angle2
+kwdprog - kwdprog
+kwdmain - kwdmain
+brace1 - brace1
+brace2 - brace2
+kwdvars - kwdvars
+eps - eps
+parens1 - parens1
+parens2 - parens2
+semi - semi
+equal - equal
+int - int
+float - float
+string - string
+id - id
+bracket1 - bracket1
+bracket2 - bracket2
+aster - aster
+comma - comma
+kwdclass - kwdclass
+colon - colon
+kwdfcn - kwdfcn
+expr - expr
+kwdif - kwdif
+kwdelseif - kwdelseif
+kwdelse - kwdelse
+kwdwhile - kwdwhile
+kprint - kprint
+kwdreturn - kwdreturn
+opeq - opeq
+opne - opne
+ople - ople
+opge - opge
+angle1 - angle1
+angle2 - angle2
+plus - plus
+minus - minus
+slash - slash
+caret - caret
+Pgm - kwdprog
+Main - kwdmain
+BBlock - brace1
+Vargroup - kwdvars, eps
+PPvarlist - parens1
+Varlist - eps, int, float, string, id, kwdclass
+Z - eps, equal
+Y - eps, colon
+Basekind - int, float, string
+Classid - id
+X - eps, bracket1
+Varid - id
+KKint - bracket1
+Deref - aster
+BBexprs - brace1
+W - eps, id, int, float, string, aster, parens1
+Moreexprs - comma, eps
+Classdecl - kwdclass
+BBClassitems - brace1
+Classmom - plus, eps
+Classitems - eps, colon, int, float, string, id, kwdclass, kwdfcn
+Classgroup - eps, colon, int, float, string, id, kwdclass, kwdfcn
+Class_ctrl - colon
+Interfaces - colon, eps
+Mddecls - eps, kwdfcn
+Mdheader - kwdfcn
+Fcndefs - eps, kwdfcn
+Fcnheader - kwdfcn
+Fcnid - id
+PParmlist - parens1
+V - eps, id, aster
+More_varspecs - comma, eps
+PPonly - parens1
+Stmts - eps, id, aster, kwdif, kprint, kwdreturn, kwdwhile
+Stmt - id, aster, kwdif, kprint, kwdreturn, kwdwhile
+T - eps, bracket1
+S - eps, bracket1
+KKexpr - bracket1
+PPexprs - parens1
+R - eps, id, int, float, string, aster, parens1
+Stif - kwdif
+Elsepart - kwdelseif, kwdelse, eps
+Stwhile - kwdwhile
+Stprint - kprint
+Strtn - kwdreturn
+Q - eps, id, int, float, string, aster, parens1
+PPexpr - parens1
+A - eps, opeq, opne, ople, opge, angle1, angle2
+B - eps, plus, minus
+C - eps, aster, slash, caret
+Fact - id, int, float, string, aster, parens1
+Oprel - opeq, opne, ople, opge, angle1, angle2
+Lthan - angle1
+Gthan - angle2
+Opadd - plus, minus
+Opmul - aster, slash, caret
+Simplekind - int, float, string, id
+Varspec - id, aster
+Arrspec - id
+Deref_id - aster
+Classheader - kwdclass
+Md_id - id
+Fcndef - kwdfcn
+Retkind - int, float, string
+Lval - id, aster
+Aref - id
+Fcall - id
+Classdef - kwdclass
+U - eps, bracket1, parens1
+P - eps, bracket1, parens1
+Vardecl - int, float, string, id
+Varspecs - id, aster
+Stasgn - id, aster
+Varitem - int, float, string, id, kwdclass
+Term - id, int, float, string, aster, parens1
+Rterm - id, int, float, string, aster, parens1
+Expr - id, int, float, string, aster, parens1
+Varinit - id, int, float, string, aster, parens1, brace1
+Exprlist - id, int, float, string, aster, parens1
